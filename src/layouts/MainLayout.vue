@@ -24,14 +24,14 @@
       show-if-above
       bordered
       content-class="bg-grey-1"
+      :width="350"
+      :breakpoint="500"
+      :mini="miniState"
+      @mouseover="miniState = false"
+      @mouseout="miniState = true"
+      mini-to-overlay
     >
       <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-          Essential Links
-        </q-item-label>
         <EssentialLink
           v-for="link in essentialLinks"
           :key="link.title"
@@ -47,32 +47,32 @@
 </template>
 
 <script lang="ts">
-import EssentialLink from '../components/layout/EssentialLink.vue'
+import EssentialLink from "../components/layout/EssentialLink.vue";
 
 const linksData = [
   {
-    title: 'Record',
-    caption: 'Quản lý các bản ghi',
-    icon: 'school',
-    link: 'https://quasar.dev'
+    title: "Record",
+    caption: "Quản lý các bản ghi",
+    icon: "school",
+    link: "https://quasar.dev",
   },
   {
-    title: 'Subject',
-    caption: 'Quản lý các môn thi đấu',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
+    title: "Subject",
+    caption: "Quản lý các môn thi đấu",
+    icon: "code",
+    link: "https://github.com/quasarframework",
   },
   {
-    title: 'Monitor',
-    caption: 'Đo lường hiệu quả',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
+    title: "Monitor",
+    caption: "Đo lường hiệu quả",
+    icon: "chat",
+    link: "https://chat.quasar.dev",
   },
   {
-    title: 'User',
-    caption: 'Thông tin tài khoản',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
+    title: "User",
+    caption: "Thông tin tài khoản",
+    icon: "record_voice_over",
+    link: "https://forum.quasar.dev",
   },
   // {
   //   title: 'Twitter',
@@ -94,13 +94,14 @@ const linksData = [
   // }
 ];
 
-import { Vue, Component } from 'vue-property-decorator';
+import { Vue, Component } from "vue-property-decorator";
 
 @Component({
-  components: { EssentialLink }
+  components: { EssentialLink },
 })
 export default class MainLayout extends Vue {
   leftDrawerOpen = false;
   essentialLinks = linksData;
+  miniState = true;
 }
 </script>

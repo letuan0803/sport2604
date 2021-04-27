@@ -1,102 +1,104 @@
-export const mockData = [
-  {
-    name: 'Frozen Yogurt',
-    calories: 159,
-    fat: 6.0,
-    carbs: 24,
-    protein: 4.0,
-    sodium: 87,
-    calcium: '14%',
-    iron: '1%'
-  },
-  {
-    name: 'Ice cream sandwich',
-    calories: 237,
-    fat: 9.0,
-    carbs: 37,
-    protein: 4.3,
-    sodium: 129,
-    calcium: '8%',
-    iron: '1%'
-  },
-  {
-    name: 'Eclair',
-    calories: 262,
-    fat: 16.0,
-    carbs: 23,
-    protein: 6.0,
-    sodium: 337,
-    calcium: '6%',
-    iron: '7%'
-  },
-  {
-    name: 'Cupcake',
-    calories: 305,
-    fat: 3.7,
-    carbs: 67,
-    protein: 4.3,
-    sodium: 413,
-    calcium: '3%',
-    iron: '8%'
-  },
-  {
-    name: 'Gingerbread',
-    calories: 356,
-    fat: 16.0,
-    carbs: 49,
-    protein: 3.9,
-    sodium: 327,
-    calcium: '7%',
-    iron: '16%'
-  },
-  {
-    name: 'Jelly bean',
-    calories: 375,
-    fat: 0.0,
-    carbs: 94,
-    protein: 0.0,
-    sodium: 50,
-    calcium: '0%',
-    iron: '0%'
-  },
-  {
-    name: 'Lollipop',
-    calories: 392,
-    fat: 0.2,
-    carbs: 98,
-    protein: 0,
-    sodium: 38,
-    calcium: '0%',
-    iron: '2%'
-  },
-  {
-    name: 'Honeycomb',
-    calories: 408,
-    fat: 3.2,
-    carbs: 87,
-    protein: 6.5,
-    sodium: 562,
-    calcium: '0%',
-    iron: '45%'
-  },
-  {
-    name: 'Donut',
-    calories: 452,
-    fat: 25.0,
-    carbs: 51,
-    protein: 4.9,
-    sodium: 326,
-    calcium: '2%',
-    iron: '22%'
-  },
-  {
-    name: 'KitKat',
-    calories: 518,
-    fat: 26.0,
-    carbs: 65,
-    protein: 7,
-    sodium: 54,
-    calcium: '12%',
-    iron: '6%'
-  }
+import { uid } from "quasar";
+import { Run100Modal } from "src/model/record/run100m";
+import { EditMode } from "./enumerate";
+const baseMock01: Run100Modal = {
+  AthletesID: uid(),
+  AthletesName: "Lê Thanh Tuấn",
+  AthletesNo: "VDV01",
+  BX3B: 4,
+  BXTC: 3,
+  CreatedBy: "lttuan",
+  CreatedDate: new Date(),
+  EditMode: EditMode.None,
+  MeasuringTime: new Date(),
+  ModifyBy: "lttuan",
+  ModifyDate: new Date(),
+  RecordID: uid(),
+  RecordNo: "RC01",
+  SubjectID: uid(),
+  SubjectNo: "MH1",
+  SubjectName: "chay 100m",
+  TDC30m: 4,
+  XPC30m: 5,
+  XPC60m: 6
+};
+const baseMock02 = Object.assign(baseMock01, {
+  AthletesID: uid(),
+  AthletesName: "Lê Thị Hằng",
+  AthletesNo: "VDV02",
+});
+const baseMock03 = Object.assign(baseMock01, {
+  AthletesID: uid(),
+  AthletesName: "Lê Thanh Tâm",
+  AthletesNo: "VDV03",
+})
+export const mockData: Run100Modal[] = [
+  Object.assign(baseMock01, {
+    RecordID: uid(),
+    RecordNo: "RC01",
+  }),  
+  Object.assign(baseMock01, {
+    RecordID: uid(),
+    RecordNo: "RC02",
+  }), 
+  Object.assign(baseMock01, {
+    RecordID: uid(),
+    RecordNo: "RC03",
+  }), 
+  Object.assign(baseMock01, {
+    RecordID: uid(),
+    RecordNo: "RC04",
+  }), 
+  Object.assign(baseMock01, {
+    RecordID: uid(),
+    RecordNo: "RC05",
+  }), 
+  Object.assign(baseMock01, {
+    RecordID: uid(),
+    RecordNo: "RC06",
+  }),
+  Object.assign(baseMock01, {
+    RecordID: uid(),
+    RecordNo: "RC07",
+  }),  
+  Object.assign(baseMock02, {
+    RecordID: uid(),
+    RecordNo: "RC08",
+  }), 
+  Object.assign(baseMock02, {
+    RecordID: uid(),
+    RecordNo: "RC09",
+  }), 
+  Object.assign(baseMock02, {
+    RecordID: uid(),
+    RecordNo: "RC010",
+  }), 
+  Object.assign(baseMock02, {
+    RecordID: uid(),
+    RecordNo: "RC011",
+  }), 
+  Object.assign(baseMock02, {
+    RecordID: uid(),
+    RecordNo: "RC012",
+  }),  
+  Object.assign(baseMock03, {
+    RecordID: uid(),
+    RecordNo: "RC08",
+  }), 
+  Object.assign(baseMock03, {
+    RecordID: uid(),
+    RecordNo: "RC09",
+  }), 
+  Object.assign(baseMock03, {
+    RecordID: uid(),
+    RecordNo: "RC010",
+  }), 
+  Object.assign(baseMock03, {
+    RecordID: uid(),
+    RecordNo: "RC011",
+  }), 
+  Object.assign(baseMock03, {
+    RecordID: uid(),
+    RecordNo: "RC012",
+  }),
 ];

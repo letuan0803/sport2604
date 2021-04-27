@@ -1,11 +1,11 @@
-import { Gender } from 'src/common/enumerate';
-import { BaseEntity } from '../baseModel/baseEntity';
+import { Gender } from "src/common/enumerate";
+import { BaseEntity } from "../baseModel/baseEntity";
 
 export class BasePeople extends BaseEntity {
   /**PK */
   AthleteID!: string;
   /**tên */
-  Name: string = '';
+  Name = "";
   /**ngày sinh */
   Birth: Date = new Date(1990, 1, 1);
   /**địa chỉ */

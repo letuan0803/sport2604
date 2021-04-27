@@ -1,7 +1,7 @@
 <template>
   <div class="q-pa-md">
     <q-table
-      title="Treats"
+      title="Bảng thành tích luyện tập"
       :data="data"
       :columns="columns"
       row-key="name"
@@ -9,57 +9,60 @@
       selection="multiple"
       :selected.sync="selected"
       :pagination="pagination"
-    />
-
-    <div class="q-mt-md">Selected: {{ JSON.stringify(selected) }}</div>
+    >
+    </q-table>
+    <!-- <div class="q-mt-md">Selected: {{ JSON.stringify(selected) }}</div> -->
   </div>
 </template>
 
 <script>
-import { Vue, Component } from 'vue-property-decorator';
-import { mockData } from '../common/mockData';
+import { Vue, Component } from "vue-property-decorator";
+import { mockData } from "../common/mockData";
 @Component()
 export default class RecordManagement extends Vue {
   selected = [];
   columns = [
     {
-      name: 'desc',
-      required: true,
-      label: 'Dessert (100g serving)',
-      align: 'left',
-      field: (row) => row.name,
-      format: (val) => `${val}`,
+      name: "AthletesName",
+      label: "Vận động viên",
+      align: "left",
+      field: "AthletesName",
       sortable: true,
     },
     {
-      name: 'calories',
-      align: 'center',
-      label: 'Calories',
-      field: 'calories',
+      name: "birth",
+      label: "Năm sinh",
+      align: "center",
+      field: "AthletesName",
       sortable: true,
     },
-    { name: 'fat', label: 'Fat (g)', field: 'fat', sortable: true },
-    { name: 'carbs', label: 'Carbs (g)', field: 'carbs' },
-    { name: 'protein', label: 'Protein (g)', field: 'protein' },
-    { name: 'sodium', label: 'Sodium (mg)', field: 'sodium' },
     {
-      name: 'calcium',
-      label: 'Calcium (%)',
-      field: 'calcium',
+      name: "unit",
+      label: "Đơn vị",
+      align: "center",
+      field: "AthletesName",
       sortable: true,
-      sort: (a, b) => parseInt(a, 10) - parseInt(b, 10),
     },
+    { name: "XPC30m", label: "30m XPC (s)", align: "center", field: "XPC30m" },
+    { name: "XPC60m", label: "60m XPC (s)", align: "center", field: "XPC60m" },
+    { name: "TDC30m", label: "30m TDC (s)", align: "center", field: "TDC30m" },
     {
-      name: 'iron',
-      label: 'Iron (%)',
-      field: 'iron',
-      sortable: true,
-      sort: (a, b) => parseInt(a, 10) - parseInt(b, 10),
+      name: "BXTC",
+      label: "Bật xa tại chỗ (m)",
+      align: "center",
+      field: "BXTC",
+    },
+    { name: "BX3B", label: "Bật xa 3 m (m)", align: "center", field: "BX3B" },
+    {
+      name: "MeasuringTime",
+      label: "Thời điểm ghi chép",
+      align: "center",
+      field: "MeasuringTime",
     },
   ];
   data = mockData;
   pagination = {
-    sortBy: 'desc',
+    sortBy: "desc",
     descending: false,
     page: 1,
     rowsPerPage: 10,
@@ -68,9 +71,9 @@ export default class RecordManagement extends Vue {
 
   getSelectedString() {
     return this.selected.length === 0
-      ? ''
+      ? ""
       : `${this.selected.length} record${
-          this.selected.length > 1 ? 's' : ''
+          this.selected.length > 1 ? "s" : ""
         } selected of ${this.data.length}`;
   }
 }

@@ -1,9 +1,9 @@
 import { EditMode } from "src/common/enumerate";
 
 export class BaseEntity {
-  CreatedBy: string = "lttuan";
+  CreatedBy = "lttuan";
   CreatedDate: Date =new Date();
-  ModifyBy: string= "lttuan";
+  ModifyBy= "lttuan";
   ModifyDate: Date = new Date();
   EditMode:  EditMode = EditMode.None;
 }

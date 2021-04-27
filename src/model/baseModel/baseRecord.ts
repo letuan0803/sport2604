@@ -1,16 +1,23 @@
-import { BaseEntity } from './baseEntity';
+import { uid } from "quasar";
+import { BaseEntity } from "./baseEntity";
 
 export class BaseRecord extends BaseEntity {
   /**PK */
-  RecordID!: string;
+  RecordID: string = uid();
+  /**mã bản ghi */
+  RecordNo = "";
   /**id vận động viên */
-  AthletesID: string = '';
+  AthletesID = "";
   /**tên vận động viên */
-  AthletesName: string = '';
+  AthletesName = "";
+  /**mã vdv */
+  AthletesNo = "";
   /**tên môn thi */
-  SubjectID: string = '';
+  SubjectID = "";
   /**id môn thi */
-  SubjectName: string = '';
+  SubjectName = ""
+  /**mã môn thi */;
+  SubjectNo = "";
   /**thời điểm đo */
   MeasuringTime: Date = new Date();
 }
