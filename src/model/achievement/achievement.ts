@@ -4,7 +4,7 @@ export class Achievement extends BaseEntity {
   /**PK */
   AchievementID!: string;
   /**thành tích chạy 100m dự báo */
-  ForecastAchievement: number = 0;
+  ForecastAchievement = 0;
   /**thời gian dự đoán */
   ForecastTime: Date = new Date();
   /**thành tích chạy 100m thực tế */

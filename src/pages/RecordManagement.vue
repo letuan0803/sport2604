@@ -15,10 +15,10 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
 import { mockData } from "../common/mockData";
-@Component()
+@Component
 export default class RecordManagement extends Vue {
   selected = [];
   columns = [
@@ -69,7 +69,7 @@ export default class RecordManagement extends Vue {
     // rowsNumber: xx if getting data from a server
   };
 
-  getSelectedString() {
+  getSelectedString(): string {
     return this.selected.length === 0
       ? ""
       : `${this.selected.length} record${

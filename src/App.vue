@@ -4,14 +4,13 @@
   </div>
 </template>
 <script lang="ts">
-import { Vue, Component, Mixins } from 'vue-property-decorator';
-import IndexDBMixin from './mixins/indexdb';
-
+import { Vue, Component } from "vue-property-decorator";
+import  {db} from "src/common/indexdb"
 
 @Component
-export default class App extends Mixins(IndexDBMixin) {
-  created() {
-    this.defineDatabaseScheman();
+export default class App extends Vue {
+  async created(): Promise<void> {
+    await db.genMockData();
   }
 }
 </script>
